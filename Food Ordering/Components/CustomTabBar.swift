@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct CustomTabBar: View {
+    @State private var selection:String = "home"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selection) {
+            
+            Color.red
+                .tabItem() {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            
+            Color.blue
+                .tabItem() {
+                    Image(systemName: "heart")
+                    Text("Fevorites")
+                }
+            Color.orange
+                .tabItem() {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+        }
     }
 }
 

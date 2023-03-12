@@ -7,9 +7,30 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                SearchBar()
+                    .padding(.horizontal)
+                    .padding(.top, 10)
+                
+                Category()
+                    .padding(.vertical, 20)
+                
+                GroupCard()
+                    .padding(.bottom, 50)
+                
+                Spacer()
+                
+            }
+            .padding(.bottom, 40)
+            
+        }
     }
 }
 

@@ -8,8 +8,58 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @State private var search: String = ""
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        HStack {
+            
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.secondary)
+                
+                TextField(
+                    "Search",
+                    text: $search
+                )
+                .frame(width: 120)
+                
+                Divider()
+                
+                Image(systemName: "location.circle")
+                    .foregroundColor(.secondary)
+                
+                Text("New York. NYC")
+                    .foregroundColor(.secondary)
+                
+                
+            }
+            .frame(height: 30)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 40)
+                    .stroke(Color.secondary, lineWidth: 1)
+            )
+            
+            Button {
+                
+                //something...
+                
+            } label: {
+                
+                Image(systemName: "ellipsis")
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+                    .frame(width: 50, height: 50)
+                    .background(.orange)
+                    .cornerRadius(40)
+                
+            }
+            
+        }
+        
     }
 }
 
